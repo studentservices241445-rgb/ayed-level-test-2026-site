@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كويز مخصص – أكاديمية عايد الرسمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-logo">أكاديمية عايد الرسمية</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="support.html" class="nav-link">الدعم</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container" style="padding-top:5rem;">
+      <h1 style="color: var(--primary-color); text-align:center; margin-bottom:1rem;">إنشاء كويز مخصص</h1>
+      <p style="text-align:center; color: var(--muted-color); margin-bottom:2rem;">اختر القسم وعدد الأسئلة لإنشاء كويز قصير لمراجعة مهارة معينة ثم شاركه مع زملائك.</p>
+      <div class="form-section" id="quizFormSection">
+        <form id="quizForm">
+          <div class="form-group">
+            <label for="quizSection">القسم:</label>
+            <select id="quizSection" required>
+              <option value="">اختر القسم</option>
+              <option value="Reading">القراءة</option>
+              <option value="Listening">الاستماع</option>
+              <option value="Grammar">القواعد</option>
+              <option value="Vocabulary">المفردات</option>
+              <option value="Mixed">متنوع</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quizCount">عدد الأسئلة:</label>
+            <input type="number" id="quizCount" min="1" max="20" value="5" />
+          </div>
+          <div style="text-align:center; margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary">ابدأ الكويز</button>
+          </div>
+        </form>
+      </div>
+      <div id="quizSectionContainer" style="display:none;">
+        <div class="progress-bar"><div class="progress-bar-inner" id="quizProgress"></div></div>
+        <div id="quizQuestionContainer"></div>
+        <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+          <button id="quizPrevBtn" class="btn btn-outline">السابق</button>
+          <button id="quizNextBtn" class="btn btn-primary">التالي</button>
+        </div>
+        <div id="quizScore" style="margin-top:1.5rem; color:var(--primary-color); text-align:center;"></div>
+        <div style="text-align:center; margin-top:1rem;" id="quizShareContainer" hidden>
+          <button id="quizShareBtn" class="btn btn-outline">مشاركة نتيجتي</button>
+        </div>
+      </div>
+    </main>
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/quiz.js"></script>
+  </body>
+</html>

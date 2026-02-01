@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أكاديمية عايد الرسمية – برنامج تحديد المستوى</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header>
+      <div class="container nav">
+        <div class="nav-logo">أكاديمية عايد الرسمية</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link">الرئيسية</a>
+          <a href="#about" class="nav-link">عن البرنامج</a>
+          <a href="level-test.html" class="nav-link">ابدأ الاختبار</a>
+          <a href="#reviews" class="nav-link">الآراء</a>
+          <a href="support.html" class="nav-link">الدعم</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div>
+        <h1>اختبار تحديد المستوى وتنظيم خطة النجاح</h1>
+        <p>
+          بسم الله الرحمن الرحيم. هذا الموقع هو بوابة مجانية تساعدك على فهم مستواك في اللغة
+          الإنجليزية وتتبع خطة مذاكرة شخصية مبنية على نقاط ضعفك وقوة أقسامك. نفهم حيرة
+          الطلاب وتشتت المصادر، لذلك جمعنا أحدث النماذج والأسئلة المتجددة لعام 2026 لنضعها
+          بين يديك.
+        </p>
+        <a href="level-test.html" class="btn btn-primary">ابدأ الاختبار الآن</a>
+        <button id="installBtn" class="btn btn-outline" style="margin-top:1rem; display:none;">تثبيت البرنامج</button>
+      </div>
+    </section>
+
+    <!-- About / Features Section -->
+    <section class="container" id="about">
+      <h2 style="color: var(--primary-color); text-align: center; margin-bottom:1rem;">مميزات البرنامج</h2>
+      <div class="features">
+        <div class="feature-card">
+          <i>🧠</i>
+          <h3>اختبار محاكي</h3>
+          <p>خمسون سؤالاً عشوائياً من بنك يتجاوز 300 سؤال لتحديد مستواك بدقة مع تصحيح فوري.</p>
+        </div>
+        <div class="feature-card">
+          <i>📊</i>
+          <h3>تحليل ذكي</h3>
+          <p>تحليل لنقاط القوة والضعف واقتراح خطة مذاكرة يومية وجداول تناسب وقتك وهدفك.</p>
+        </div>
+        <div class="feature-card">
+          <i>📝</i>
+          <h3>جداول مذاكرة قابلة للتنزيل</h3>
+          <p>بعد الاختبار تحصل على خطة مذاكرة مفصلة يمكنك تحميلها كملف PDF واتباعها يومياً.</p>
+        </div>
+        <div class="feature-card">
+          <i>🎮</i>
+          <h3>كويزات مخصصة</h3>
+          <p>أنشئ كويز قصير لأي قسم من أقسام STEP لمراجعة مهارة معينة وشارك الكويز مع زملائك.</p>
+        </div>
+        <div class="feature-card">
+          <i>💬</i>
+          <h3>مساعد تفاعلي</h3>
+          <p>مساعد ذكي يجيب على استفساراتك حول الاختبار والخطط ويقترح عليك تحسينات للمذاكرة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- الدورات ليست معروضة في النسخة المجانية لتحديد المستوى -->
+
+    <!-- Testimonials / Reviews Section -->
+    <section class="container reviews" id="reviews">
+      <h2 style="color: var(--primary-color); text-align: center;">آراء ونجاحات</h2>
+      <p style="text-align: center; color: var(--muted-color); max-width:650px; margin: 0 auto 2rem;">
+        نستعرض بعض تجارب الطلاب الذين استفادوا من الاختبار والخطط. قصص نجاح ملهمة تشجعك على
+        البدء والاستمرار.
+      </p>
+      <div class="review-list" id="reviewList">
+        <!-- Reviews injected via JS -->
+      </div>
+    </section>
+
+    <!-- Share Section -->
+    <section class="container" style="margin-top: 4rem;">
+      <h2 style="color: var(--primary-color); text-align: center;">شارك البرنامج</h2>
+      <p style="text-align: center; color: var(--muted-color); max-width:600px; margin: 0 auto 1rem;">
+        انشر رابط البرنامج لتعم الفائدة بين زملائك. بالعلم يرتفع الإنسان وتتحقق الآمال.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-outline" id="shareBtn">نسخ رابط البرنامج</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="faq.html">الأسئلة الشائعة</a>
+        <a href="support.html">الدعم</a>
+      </div>
+      <p>© 2026 أكاديمية عايد. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+    
+    <!-- Chat Assistant Bubble -->
+    <div class="chat-bubble">
+      <div class="assistant-button" id="assistantBtn">💬</div>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">المساعد الافتراضي <span id="chatStatus">متصل</span></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global JS -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

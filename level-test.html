@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ابدأ اختبار تحديد المستوى</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-logo">أكاديمية عايد الرسمية</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="support.html" class="nav-link">الدعم</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container" style="padding-top:5rem;">
+      <h1 style="color: var(--primary-color); text-align:center; margin-bottom:1rem;">اختبار تحديد المستوى</h1>
+      <p style="text-align:center; color: var(--muted-color); margin-bottom:2rem;">املأ المعلومات التالية للحصول على خطة تناسبك، ثم ابدأ الاختبار المكوَّن من 50 سؤالاً.</p>
+      <!-- Form Section -->
+      <div class="form-section" id="preTestForm">
+        <form id="infoForm">
+          <div class="form-group">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="goal">هدفك من الاختبار:</label>
+            <select id="goal" required>
+              <option value="">اختر الهدف</option>
+              <option value="قبول جامعي">قبول جامعي</option>
+              <option value="وظيفة">وظيفة</option>
+              <option value="منحة دراسية">منحة دراسية</option>
+              <option value="شخصي">تطوير شخصي</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="region">منطقة الاختبار:</label>
+            <select id="region" required>
+              <option value="">اختر المنطقة</option>
+              <option value="الرياض">الرياض</option>
+              <option value="جدة">جدة</option>
+              <option value="الشرقية">الشرقية</option>
+              <option value="الشمال">الشمال</option>
+              <option value="الجنوب">الجنوب</option>
+              <option value="أخرى">أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="difficulty">أصعب قسم لديك:</label>
+            <select id="difficulty" required>
+              <option value="">اختر القسم</option>
+              <option value="Reading">القراءة</option>
+              <option value="Listening">الاستماع</option>
+              <option value="Grammar">القواعد</option>
+              <option value="Vocabulary">المفردات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="studyHours">عدد ساعات المذاكرة اليومية المتاحة:</label>
+            <input type="number" id="studyHours" min="0" max="12" placeholder="مثلاً: 2" />
+          </div>
+          <div class="form-group">
+            <label for="studyTime">وقت المذاكرة المفضل:</label>
+            <select id="studyTime" required>
+              <option value="">اختر الوقت</option>
+              <option value="morning">الصباح</option>
+              <option value="afternoon">بعد الظهر</option>
+              <option value="evening">المساء</option>
+              <option value="variable">متغير</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stage">المرحلة الدراسية/الوضع الحالي:</label>
+            <select id="stage" required>
+              <option value="">اختر المرحلة</option>
+              <option value="High School">طالب ثانوي</option>
+              <option value="University - Freshman">جامعي – سنة أولى</option>
+              <option value="University - Senior">جامعي – سنوات متقدمة</option>
+              <option value="Graduate">دراسات عليا</option>
+              <option value="Employee">موظف</option>
+              <option value="Other">أخرى</option>
+            </select>
+          </div>
+          <div class="form-group" id="majorGroup" style="display:none;">
+            <label for="major">التخصص/المسار:</label>
+            <input type="text" id="major" placeholder="مثلاً: هندسة" />
+          </div>
+          <div class="form-group">
+            <label for="studyStyle">طريقة المذاكرة المفضلة:</label>
+            <select id="studyStyle" required>
+              <option value="">اختر طريقة</option>
+              <option value="live lectures">محاضرات مباشرة</option>
+              <option value="recorded lectures">محاضرات مسجلة</option>
+              <option value="files">ملفات وملخصات</option>
+              <option value="short videos">مقاطع قصيرة منظمة</option>
+              <option value="question banks">بنوك أسئلة</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>هل سبق أن اختبرت STEP؟</label>
+            <select id="tookBefore" required>
+              <option value="">اختر</option>
+              <option value="no">لا</option>
+              <option value="yes">نعم</option>
+            </select>
+          </div>
+          <!-- New: Course enrollment history -->
+          <div class="form-group">
+            <label for="courseHistory">هل سبق أن اشتركت في دورة تدريبية؟</label>
+            <select id="courseHistory" required>
+              <option value="">اختر</option>
+              <option value="ayed_intensive">دورة عايد المكثفة</option>
+              <option value="comprehensive">الدورة الشاملة الحديثة 2026</option>
+              <option value="hilam">مبادرة حلم</option>
+              <option value="other">منصة أخرى</option>
+              <option value="none">لم أشترك في دورة</option>
+            </select>
+          </div>
+          <!-- New: Course feedback (only if not none) -->
+          <div class="form-group" id="courseFeedbackGroup" style="display:none;">
+            <label>ما السلبيات التي واجهتها في الدورة السابقة؟ (يمكن اختيار أكثر من خيار)</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="noUpdates" /> لا توجد تحديثات للمحتوى</label>
+              <label><input type="checkbox" value="weakSupport" /> الدعم بطيء أو ضعيف</label>
+              <label><input type="checkbox" value="noPlans" /> لا توجد خطط أو جداول واضحة</label>
+              <label><input type="checkbox" value="highPrice" /> السعر مرتفع</label>
+              <label><input type="checkbox" value="other" /> أخرى</label>
+            </div>
+          </div>
+          <!-- New: Source of referral -->
+          <div class="form-group">
+            <label for="source">كيف سمعت عن البرنامج؟</label>
+            <select id="source" required>
+              <option value="">اختر مصدرك</option>
+              <option value="twitter">تويتر</option>
+              <option value="whatsapp">واتس آب</option>
+              <option value="snapchat">سناب شات</option>
+              <option value="tiktok">تيك توك</option>
+              <option value="friend">صديق/أستاذ</option>
+              <option value="other">أخرى</option>
+            </select>
+          </div>
+          <!-- New: Program goal -->
+          <div class="form-group">
+            <label for="programGoal">ما الهدف من استخدام البرنامج؟</label>
+            <select id="programGoal" required>
+              <option value="">اختر الهدف</option>
+              <option value="plan">تنظيم خطة وجداول للمذاكرة</option>
+              <option value="measure">قياس مستواك</option>
+              <option value="chooseCourse">اختيار الدورة المناسبة لاحقاً</option>
+              <option value="other">أخرى</option>
+            </select>
+          </div>
+          <div class="form-group" id="previousScoreGroup" style="display:none;">
+            <label for="previousScore">الدرجة السابقة:</label>
+            <input type="number" id="previousScore" min="0" max="100" />
+            <label for="targetScore">الدرجة المستهدفة:</label>
+            <input type="number" id="targetScore" min="0" max="100" />
+          </div>
+          <div class="form-group">
+            <label for="examDate">موعد اختبارك:</label>
+            <select id="examDate" required>
+              <option value="">اختر الموعد</option>
+              <option value="within24">أقل من 24 ساعة</option>
+              <option value="within3">أقل من 3 أيام</option>
+              <option value="within7">خلال 7 أيام</option>
+              <option value="within30">خلال شهر</option>
+              <option value="none">لم أحجز بعد</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="comments">معلومات إضافية:</label>
+            <textarea id="comments" rows="3" placeholder="إذا كان لديك تفاصيل أو طلبات خاصة"></textarea>
+          </div>
+          <div style="text-align:center; margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary">ابدأ الاختبار</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Test Section (hidden by default) -->
+      <div id="testSection" style="display:none;">
+        <div class="progress-bar"><div class="progress-bar-inner" id="progressInner"></div></div>
+        <div id="questionContainer"></div>
+        <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+          <button id="prevBtn" class="btn btn-outline">السابق</button>
+          <button id="nextBtn" class="btn btn-primary">التالي</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Notification Container & Chat same as index (optional) -->
+    <div class="notification-container" id="notificationContainer"></div>
+    <div class="chat-bubble">
+      <div class="assistant-button" id="assistantBtn">💬</div>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">المساعد الافتراضي <span id="chatStatus">متصل</span></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/level-test.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نتيجة الاختبار والخطة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-logo">أكاديمية عايد الرسمية</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="support.html" class="nav-link">الدعم</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container" style="padding-top:5rem;">
+      <h1 style="color: var(--primary-color); text-align:center; margin-bottom:1rem;">نتيجتك وخطتك الشخصية</h1>
+      <div id="resultSummary" class="results-section">
+        <!-- Summary of scores will appear here -->
+      </div>
+      <div id="planSection" class="results-section">
+        <!-- Study plan will be generated here -->
+      </div>
+      <div style="margin-top:2rem; text-align:center;" id="downloadShare" class="results-section" hidden>
+        <button id="downloadPlan" class="btn btn-outline">تحميل جدول المذاكرة PDF</button>
+        <button id="sharePlan" class="btn btn-primary" style="margin-right:1rem;">مشاركة خطتي</button>
+      </div>
+      <div style="margin-top:2rem; text-align:center;" id="ctaSection"></div>
+    </main>
+    <div class="notification-container" id="notificationContainer"></div>
+    <div class="chat-bubble">
+      <div class="assistant-button" id="assistantBtn">💬</div>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">المساعد الافتراضي <span id="chatStatus">متصل</span></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/results.js"></script>
+  </body>
+</html>

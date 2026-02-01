@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>التسجيل في الدورة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+          <div class="nav-logo">التسجيل</div>
+          <div class="menu-toggle" id="menuToggle">☰</div>
+          <nav class="nav-menu" id="navMenu">
+              <a href="index.html" class="nav-link">الرئيسية</a>
+              <a href="index.html#courses" class="nav-link">الدورات</a>
+              <a href="support.html" class="nav-link">الدعم</a>
+          </nav>
+      </div>
+    </header>
+    <main class="container" style="padding-top:5rem;">
+      <h1 style="color:var(--primary-color); text-align:center; margin-bottom:1rem;">نموذج التسجيل</h1>
+      <div class="results-section" id="courseInfo">
+        <!-- Course details will be filled via JS -->
+      </div>
+      <div class="form-section" id="registerFormSection">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="regName">الاسم الكامل:</label>
+            <input type="text" id="regName" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">البريد الإلكتروني:</label>
+            <input type="email" id="regEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="regPhone">رقم الجوال:</label>
+            <input type="tel" id="regPhone" placeholder="05xxxxxxxx" required />
+          </div>
+          <div class="form-group">
+            <label>هل أنجزت اختبار تحديد المستوى؟</label>
+            <select id="didLevelTest" required>
+              <option value="">اختر</option>
+              <option value="yes">نعم</option>
+              <option value="no">لا</option>
+            </select>
+          </div>
+          <div class="form-group" id="planField" style="display:none;">
+            <label for="planText">أرفق خطتك (يمكنك نسخها من صفحة النتائج):</label>
+            <textarea id="planText" rows="4"></textarea>
+          </div>
+          <div class="form-group" id="noPlanNotice" style="display:none;">
+            <p style="color: var(--muted-color);">نوصي بإجراء <a href="level-test.html" style="color:var(--primary-color); text-decoration:underline;">اختبار تحديد المستوى</a> لمعرفة مستواك والحصول على خطة. بعد الإتمام انسخ خطتك وضعها هنا.</p>
+          </div>
+          <div class="form-group">
+            <label for="paymentMethod">طريقة الدفع المفضلة:</label>
+            <select id="paymentMethod" required>
+              <option value="">اختر</option>
+              <option value="bank">تحويل بنكي</option>
+              <option value="telegram">نجوم تيليجرام</option>
+            </select>
+          </div>
+          <!-- Bank details -->
+          <div id="bankDetails" style="display:none;">
+            <p style="color:var(--muted-color); margin-bottom:0.5rem;">تفاصيل التحويل:</p>
+            <ul style="color:var(--muted-color); margin-bottom:0.5rem;">
+              <li>البنك: الراجحي</li>
+              <li>اسم المستفيد: أكاديمية عايد</li>
+              <li>رقم الآيبان: SA00 0000 0000 0000 0000 0000</li>
+            </ul>
+            <div class="form-group">
+              <label for="receipt">إرفاق إيصال التحويل (صورة):</label>
+              <input type="file" id="receipt" accept="image/*" />
+            </div>
+          </div>
+          <!-- Telegram stars details -->
+          <div id="telegramDetails" style="display:none;">
+            <p style="color:var(--muted-color); margin-bottom:0.5rem;">للشراء عبر نجوم تيليجرام، يرجى زيارة قنوات الدورة عبر الروابط التالية واتباع التعليمات:</p>
+            <ul style="color:var(--muted-color);">
+              <li><a href="https://t.me/yourcoursechannel1" target="_blank" style="color:var(--primary-color); text-decoration:underline;">قناة الملفات</a></li>
+              <li><a href="https://t.me/yourcoursechannel2" target="_blank" style="color:var(--primary-color); text-decoration:underline;">قناة الشروحات</a></li>
+            </ul>
+            <p style="color:var(--muted-color);">بعد الدفع عبر نجوم تيليجرام سيتم إضافتك تلقائياً.</p>
+          </div>
+          <div class="form-group">
+            <label for="message">رسالة أو ملاحظات إضافية:</label>
+            <textarea id="message" rows="3"></textarea>
+          </div>
+          <div style="text-align:center; margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+          </div>
+        </form>
+        <div id="successMsg" style="display:none; text-align:center; margin-top:1rem; color:var(--primary-color); font-weight:600;">
+          تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.
+        </div>
+      </div>
+    </main>
+    <div class="notification-container" id="notificationContainer"></div>
+    <div class="chat-bubble">
+      <div class="assistant-button" id="assistantBtn">💬</div>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">المساعد الافتراضي <span id="chatStatus">متصل</span></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/register.js"></script>
+  </body>
+</html>

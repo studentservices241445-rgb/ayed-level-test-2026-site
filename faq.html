@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الأسئلة الشائعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-logo">الأسئلة الشائعة</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="index.html#courses" class="nav-link">الدورات</a>
+          <a href="support.html" class="nav-link">الدعم</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container" style="padding-top:5rem;">
+      <h1 style="color:var(--primary-color); text-align:center; margin-bottom:1rem;">الأسئلة الشائعة</h1>
+      <p style="text-align:center; color:var(--muted-color); margin-bottom:2rem;">ستجد هنا إجابات على أكثر الاستفسارات شيوعاً حول الاختبار والخطط والدورات.</p>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <div class="accordion-header">ما هو اختبار تحديد المستوى؟</div>
+          <div class="accordion-content"><p>هو اختبار تفاعلي عبر الإنترنت يحتوي على 50 سؤالاً عشوائياً من بنك أسئلة واسع لتحديد نقاط قوتك وضعفك في اللغة الإنجليزية.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">كيف يتم اختيار الأسئلة؟</div>
+          <div class="accordion-content"><p>يتم اختيار الأسئلة عشوائياً في كل محاولة من أقسام مختلفة: القراءة، القواعد، المفردات والاستماع.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">هل يمكن إعادة الاختبار؟</div>
+          <div class="accordion-content"><p>نعم، يمكنك إعادة الاختبار في أي وقت لتحسين مستواك أو لتجربة أسئلة جديدة.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">هل المشاركة في الدورات إلزامية؟</div>
+          <div class="accordion-content"><p>لا، المشاركة اختيارية. بعد الحصول على نتيجتك، يمكنك الاطلاع على الدورات المقترحة واتخاذ قرارك.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">كيف يمكنني الدفع مقابل الدورة؟</div>
+          <div class="accordion-content"><p>يمكنك الدفع عبر التحويل البنكي أو باستخدام نجوم تيليجرام. ستظهر لك التفاصيل أثناء عملية التسجيل.</p></div>
+        </div>
+      </div>
+    </main>
+    <div class="notification-container" id="notificationContainer"></div>
+    <div class="chat-bubble">
+      <div class="assistant-button" id="assistantBtn">💬</div>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">المساعد الافتراضي <span id="chatStatus">متصل</span></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+    <script>
+      // FAQ accordion functionality
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const active = header.classList.contains('active');
+          // close all
+          document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+          document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+          if (!active) {
+            header.classList.add('active');
+            const content = header.nextElementSibling;
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

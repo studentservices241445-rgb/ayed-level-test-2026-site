@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الدعم الفني</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-logo">الدعم</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="index.html#courses" class="nav-link">الدورات</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container" style="padding-top:5rem;">
+      <h1 style="color:var(--primary-color); text-align:center; margin-bottom:1rem;">تواصل معنا</h1>
+      <p style="text-align:center; color:var(--muted-color); margin-bottom:2rem;">إذا كانت لديك أي استفسارات أو تحتاج للمساعدة، يرجى إرسال رسالتك وسيتم الرد عليك في أقرب وقت.</p>
+      <div class="form-section">
+        <form id="supportForm">
+          <div class="form-group">
+            <label for="supportName">الاسم:</label>
+            <input type="text" id="supportName" required />
+          </div>
+          <div class="form-group">
+            <label for="supportEmail">البريد الإلكتروني:</label>
+            <input type="email" id="supportEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="supportSubject">الموضوع:</label>
+            <input type="text" id="supportSubject" required />
+          </div>
+          <div class="form-group">
+            <label for="supportMessage">الرسالة:</label>
+            <textarea id="supportMessage" rows="4" required></textarea>
+          </div>
+          <div style="text-align:center; margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary">إرسال</button>
+          </div>
+        </form>
+        <div id="supportSuccess" style="display:none; text-align:center; margin-top:1rem; color:var(--primary-color); font-weight:600;">شكراً لتواصلك معنا! تم استلام رسالتك وسيتم الرد خلال 24 ساعة.</div>
+      </div>
+    </main>
+    <div class="notification-container" id="notificationContainer"></div>
+    <div class="chat-bubble">
+      <div class="assistant-button" id="assistantBtn">💬</div>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">المساعد الافتراضي <span id="chatStatus">متصل</span></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+    <script>
+      document.getElementById('supportForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('supportSuccess').style.display = 'block';
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
